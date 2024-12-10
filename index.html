@@ -6,28 +6,26 @@
     <title>Mis Aplicaciones</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
-        /* Paleta de colores basada en Apple Design */
+        /* Paleta accesible */
         :root {
-            --primary-color: #333333; /* Gris azulado */
-            --background-color: #EDF2F4; /* Fondo claro */
-            --text-color: #2B2D42; /* Azul profundo oscuro */
+            --primary-color: #F42727; /* Rojo vibrante */
+            --background-color: #FFFFFF; /* Fondo claro */
+            --text-color: #1A1A1A; /* Gris oscuro casi negro */
             --card-color: #FFFFFF; /* Blanco puro */
-            --header-footer-color: #333333; /* Negro oscuro */
-            --welcome-banner-color: #FFFFFF; /* Blanco puro */
-            --hover-color: #333333; /* Gris azulado */
+            --header-footer-color: #111111; /* Negro accesible */
+            --hover-color: #D40F0F; /* Rojo oscuro */
             --shadow-color: rgba(0, 0, 0, 0.1);
             --hover-scale: 1.03;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --primary-color: #EDF2F4; /* Blanco apagado */
-                --background-color: #2B2D42; /* Azul profundo oscuro */
-                --text-color: #EDF2F4; /* Blanco apagado */
-                --card-color: #333333; /* Gris azulado */
-                --header-footer-color: #333333; /* Negro oscuro */
-                --welcome-banner-color: #FFFFFF; /* Blanco puro */
-                --hover-color: #FFFFFF; /* Blanco puro */
+                --primary-color: #FF6B6B; /* Rojo suave */
+                --background-color: #2B2B2B; /* Gris oscuro */
+                --text-color: #FFFFFF; /* Blanco puro */
+                --card-color: #333333; /* Gris medio */
+                --header-footer-color: #111111; /* Negro accesible */
+                --hover-color: #FF4C4C; /* Rojo claro */
                 --shadow-color: rgba(255, 255, 255, 0.1);
             }
         }
@@ -63,19 +61,6 @@
             padding: 2rem;
             max-width: 1200px;
             margin: auto;
-            opacity: 0;
-            animation: fadeIn 1s forwards;
-        }
-
-        @keyframes fadeIn {
-            0% {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            100% {
-                opacity: 1;
-                transform: translateY(0);
-            }
         }
 
         .card {
@@ -117,13 +102,13 @@
         .card-description {
             margin: 0.5rem 0 1rem;
             font-size: 0.9rem;
-            color: var(--primary-color);
+            color: var(--text-color);
         }
 
         .card-link {
             display: inline-block;
             text-decoration: none;
-            color: var(--background-color);
+            color: var(--card-color);
             background-color: var(--primary-color);
             padding: 0.5rem 1rem;
             border-radius: 8px;
@@ -148,7 +133,7 @@
         .welcome-banner {
             text-align: center;
             padding: 1rem;
-            background-color: var(--welcome-banner-color);
+            background-color: var(--card-color);
             color: var(--text-color);
             margin-bottom: 1rem;
             border-radius: 8px;
@@ -254,11 +239,7 @@
         const scrollToTopBtn = document.getElementById("scrollToTop");
 
         window.addEventListener("scroll", () => {
-            if (window.scrollY > 300) {
-                scrollToTopBtn.style.display = "block";
-            } else {
-                scrollToTopBtn.style.display = "none";
-            }
+            scrollToTopBtn.style.display = window.scrollY > 300 ? "block" : "none";
         });
 
         scrollToTopBtn.addEventListener("click", () => {
